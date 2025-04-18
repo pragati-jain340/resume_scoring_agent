@@ -13,6 +13,7 @@ def score_resume(text, ai_keywords):
     else:
         feedback.append("Resume content too short ❌")
     
+    
     # Education (20%)
     education_score = 0
     if "phd" in text.lower() or "doctorate" in text.lower():
