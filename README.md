@@ -20,7 +20,9 @@ resume_scoring_agent/
 ├── output/              - Generated reports
 ├── processed/           - Processed resumes (empty - .gitkeep maintains structure)
 ├── resumes/             - Input resumes
+├── doc/                 - Task Description Document
 └── .gitignore           - Git ignore rules
+
 ```
 
 ## Setup
