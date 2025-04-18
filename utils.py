@@ -16,7 +16,6 @@ def extract_text_from_pdf(file_path: str) -> str:
         raise Exception(f"PDF extraction failed: {str(e)}")
     return text.strip()
 
-
 def extract_text_from_docx(file_path: str) -> str:
     """Extract text from DOCX with improved error handling"""
     text = ""

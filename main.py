@@ -7,18 +7,23 @@ from utils import extract_resume_data, extract_email  # Added extract_email impo
 from scoring import score_resume
 from emailer import send_feedback_email
 
-# Setup logging
+def ensure_folders_exist():
+    """Ensure all required folders exist"""
+    # Create the logs directory specifically
+    logs_dir = os.path.dirname(LOG_FILE)
+    for folder in [RESUME_FOLDER, PROCESSED_FOLDER, OUTPUT_FOLDER, logs_dir]:
+        os.makedirs(folder, exist_ok=True)
+
+# FIRST ensure folders exist
+ensure_folders_exist()
+
+# THEN configure logging
 logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
-
-def ensure_folders_exist():
-    """Ensure all required folders exist"""
-    for folder in [RESUME_FOLDER, PROCESSED_FOLDER, OUTPUT_FOLDER, 'logs']:
-        os.makedirs(folder, exist_ok=True)
 
 def process_resumes():
     ensure_folders_exist()
